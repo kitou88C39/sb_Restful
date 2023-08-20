@@ -11,4 +11,8 @@ public class HomeController {
         return "Hello User";
     }
     
+     @GetMapping("getcities")
+    public City getcities(){
+        //
+    }
 }
