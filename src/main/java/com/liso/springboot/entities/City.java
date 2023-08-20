@@ -1,7 +1,9 @@
 package com.liso.springboot.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Id;
 import javax.persistence.Table;
-
 import jakarta.annotation.Generated;
 
 @Entity
