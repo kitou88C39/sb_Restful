@@ -9,7 +9,7 @@ import com.liso.springboot.repositories.CityRepository;
 public class CityService {
     @Autowired CityRepository cityRepository;
 
-    public List<city>CityService(){
+    public List<city> getService(){
         return cityRepository.findAll();
     }
 }
