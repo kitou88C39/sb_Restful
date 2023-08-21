@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
+    @Autowired
+    CityService CityService;
     
     @GetMapping("sayhello")
     public String sayHello(){
@@ -13,6 +15,6 @@ public class HomeController {
     
      @GetMapping("getcities")
     public City getcities(){
-        //
+        cityService.getCities();
     }
 }
