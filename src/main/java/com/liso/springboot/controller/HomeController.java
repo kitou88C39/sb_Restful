@@ -13,8 +13,8 @@ public class HomeController {
         return "Hello User";
     }
     
-     @GetMapping("getcities")
-    public City getcities(){
-        cityService.getCities();
+    @GetMapping("getcities")
+    public List<City> getCities(){
+        return cityService.getCities();
     }
 }
