@@ -22,6 +22,6 @@ public class CityService {
     }
 
     public City getCities(String cityname){
-        return cityresRepository.findByCityname();
+        return cityresRepository.findByCityname(cityname);
     }
 }
