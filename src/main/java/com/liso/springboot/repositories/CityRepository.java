@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 
 @Respostory
 public interface CityRepository extends JpaRepository<City,Long>{
-    
+    City findByCityname(String cityname);
 }
