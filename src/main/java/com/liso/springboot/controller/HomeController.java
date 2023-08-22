@@ -22,6 +22,6 @@ public class HomeController {
 
     @PostMapping("adddcity")
     public City SaveCity(@RequestBody City city){
-        cityService.saveCity(city);
+        return cityService.saveCity(city);
     }
 }
