@@ -20,4 +20,8 @@ public class CityService {
     public City saveCity(City city){
         return cityresRepository.save(city);
     }
+
+    public City getCities(String cityname){
+        return cityresRepository.findByCityname();
+    }
 }

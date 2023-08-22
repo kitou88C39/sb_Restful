@@ -12,7 +12,7 @@ public class City {
     
     @Id
     @Column(name = "city_id")
-    @GeneratedValue(strategy - GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "city_name")
