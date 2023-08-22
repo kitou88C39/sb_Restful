@@ -23,7 +23,7 @@ public class HomeController {
         return cityService.getCities();
     }
 
-    @PostMapping("adddcity")
+    @PostMapping("addcity")
     public City SaveCity(@RequestBody City city){
         return cityService.saveCity(city);
     }

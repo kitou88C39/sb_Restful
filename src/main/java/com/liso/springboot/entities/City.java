@@ -18,6 +18,9 @@ public class City {
     @Column(name = "city_name")
     private String cityname;
 
+    @Column(name = "citycode")
+    private String citycode;
+
     public Long getId(){
         return id;
     }
@@ -32,5 +35,13 @@ public class City {
 
     public void setCityname(String cityname){
         this.cityname = cityname;
+    }
+
+    public String getCitycode(){
+        return citycode;
+    }
+
+    public void setCityname(String citycode){
+        this.citycode = citycode;
     }
 }
