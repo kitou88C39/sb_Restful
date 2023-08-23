@@ -41,7 +41,7 @@ public class City {
         return citycode;
     }
 
-    public void setCityname(String citycode){
+    public void setCitycode(String citycode){
         this.citycode = citycode;
     }
 }
