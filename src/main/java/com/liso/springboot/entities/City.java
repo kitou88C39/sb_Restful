@@ -1,10 +1,11 @@
 package com.liso.springboot.entities;
 
+import jakarta.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.Column;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import jakarta.annotation.Generated;
 
 @Entity
 @Table(name = "cities")
@@ -18,7 +19,7 @@ public class City {
     @Column(name = "city_name")
     private String cityname;
 
-    @Column(name = "citycode")
+    @Column(name = "citycode", columnDefinition = "character varying(3) not null default 'NA'")
     private String citycode;
 
     public Long getId(){
