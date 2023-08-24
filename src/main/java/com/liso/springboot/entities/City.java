@@ -8,6 +8,7 @@ import java.beans.Transient;
 import javax.persistence.Column;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +18,7 @@ public class City {
     @Id
     @Column(name = "city_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonIgnore
     private Long id;
 
     @Column(name = "city_name")
