@@ -2,6 +2,9 @@ package com.liso.springboot.entities;
 
 import jakarta.annotation.Generated;
 import javax.persistence.Entity;
+
+import java.beans.Transient;
+
 import javax.persistence.Column;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -21,6 +24,9 @@ public class City {
 
     @Column(name = "citycode", columnDefinition = "character varying(3) not null default 'NA'")
     private String citycode;
+
+    @Transient
+    private String beanid;
 
     public Long getId(){
         return id;
