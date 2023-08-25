@@ -1,9 +1,6 @@
 package com.liso.springboot.entities;
 
-import jakarta.annotation.Generated;
 import javax.persistence.Entity;
-
-
 import javax.persistence.Column;
 import javax.persistence.GenerationType;
 import javax.persistence.Entity;
@@ -11,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -31,6 +29,10 @@ public class City {
 
     @Transient
     private String beanid;
+
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
 
     public Long getId(){
         return id;
@@ -55,4 +57,19 @@ public class City {
     public void setCitycode(String citycode){
         this.citycode = citycode;
     }
+
+    public String getBeanid(){
+        return beanid;
+    }
+
+    public void setBeanid(String beanid){
+        this.beanid = beanid;
+    }
+
+    public Country getCountry(){
+        return country;
+    }
+
+    public void setCountry(Country country){
+        this.country = country;
 }
