@@ -1,15 +1,12 @@
 package com.liso.springboot.entities;
 
-import java.beans.Transient;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GeneratedType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.annotation.Generated;
+i
 
 @Entity
 @Table(name = "countries")
