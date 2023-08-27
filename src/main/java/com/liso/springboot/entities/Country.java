@@ -10,7 +10,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.JsonIgnore;
 
 
-
 @Entity
 @Table(name = "countries")
 
@@ -19,12 +18,12 @@ public class Country {
     @Id
     @Column(name = "country_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JsonIgnore
     private Long id;
-
+    
     @Column(name = "country_name")
     private String countryname;
 
+    @JsonIgnore
     @OneToMany
     @JoinColumn(name = "country_id")
     private Set<City> cities;
