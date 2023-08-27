@@ -33,4 +33,9 @@ public class HomeController {
     public City getCity(String cityname){
         return cityService.getCity(cityname);
     }
+
+    @GetMapping("savecity")
+    public City addCity(@RequestBody){
+        
+    }
 }
