@@ -32,12 +32,15 @@ public class CityService {
         return cityresRepository.findByCityname(cityname);
     }
 
-    public City saveCity(City city){
-        return cityresRepository.save(city);
-    }
+    public City addCity(CityRequest cityrequest){
+        Country country = countryRepository.findById(cityrequest.country_id);
+        
+        City city = new City();
+        city.setCityname(cityrequest.cityname);
+        city.setCitycode(cityrequest.citycode);
+        city.setCountry(country);
 
-    public City getCities(String cityname){
-        return null;
+        return cityresRepository.save(city);
     }
 
 }
