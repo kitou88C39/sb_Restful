@@ -30,6 +30,9 @@ public class City {
     @Transient
     private String beanid;
 
+    @Column(name = "city_id")
+    private int countryid;
+
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
@@ -72,4 +75,14 @@ public class City {
 
     public void setCountry(Country country){
         this.country = country;
+    }
+
+    public int getCountryid(){
+        return countryid;
+    }
+
+    public void setCountryid(int countryid){
+        this.countryid = countryid;
+    }
+
 }
