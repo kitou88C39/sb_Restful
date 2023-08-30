@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "courses")
 public class CourseContents {
@@ -17,21 +16,33 @@ public class CourseContents {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    praivate String content;
+    private String content;
 
-    public int getId(){
+    @ManyToMany(mappdBy = "coursecontents")
+    private Set<Course> courses;
+
+    public int getId() {
         return id;
     }
 
-    public void setId(int id){
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getContent(){
+    public String getContent() {
         return content;
     }
 
-    public void setContent(String content){
+    public void setContent(String content) {
         this.content = content;
     }
+
+    public String getCourses() {
+        return courses;
+    }
+
+    public void setCourses(Set<Course> courses) {
+        this.courses = courses;
+    }
+
 }
