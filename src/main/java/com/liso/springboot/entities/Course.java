@@ -20,7 +20,7 @@ public class Course {
 
     private String coursename;
 
-    @ManyToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @ManyToMany(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
     @JoinTable(name = "course_coursecontents_mapping", joinColumns = @JoninColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "content_id"))
     private Set<CourseContents> coursecontents;
 
@@ -39,4 +39,5 @@ public class Course {
     public void setCoursename(String coursename) {
         this.coursename = coursename;
     }
+
 }
