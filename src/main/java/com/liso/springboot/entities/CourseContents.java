@@ -37,7 +37,7 @@ public class CourseContents {
         this.content = content;
     }
 
-    public String getCourses() {
+    public Set<Course> getCourses() {
         return courses;
     }
 
