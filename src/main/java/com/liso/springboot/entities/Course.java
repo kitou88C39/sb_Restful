@@ -40,4 +40,11 @@ public class Course {
         this.coursename = coursename;
     }
 
+    public Set<CourseContents> getCoursecontents() {
+        return coursecontents;
+    }
+
+    public void setCoursecontens(Set<CourseContents> coursecontents) {
+        this.coursecontents = coursecontents;
+    }
 }
