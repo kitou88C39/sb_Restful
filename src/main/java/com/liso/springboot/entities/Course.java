@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -40,4 +43,11 @@ public class Course {
         this.coursename = coursename;
     }
 
+    public Set<CourseContents> getCoursecontents() {
+        return coursecontents;
+    }
+
+    public void setCoursecontens(Set<CourseContents> coursecontents) {
+        this.coursecontents = coursecontents;
+    }
 }
