@@ -19,7 +19,7 @@ public class CourseContents {
     private String content;
 
     @ManyToMany(mappdBy = "coursecontents")
-    private Set<Course> courses;
+    private Set<Course> courses = new HashSet<>();
 
     public int getId() {
         return id;
