@@ -1,4 +1,4 @@
-package com.liso.springboot.service;
+package com.liso.springboot.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

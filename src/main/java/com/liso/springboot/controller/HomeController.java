@@ -5,6 +5,7 @@ import java.util.List;
 import com.liso.springboot.Pojos.CityRequest;
 import com.liso.springboot.entities.City;
 import com.liso.springboot.services.CityService;
+import com.liso.springboot.services.CourseService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,8 @@ public class HomeController {
 
     @Autowired
     CityService cityService;
+    @Autowired
+    CourseService courseService;
 
     @GetMapping("sayhello")
     public String sayHello() {
@@ -41,5 +44,10 @@ public class HomeController {
     @PostMapping("savecity")
     public City addCity(@RequestBody CityRequest cityrequest) {
         return cityService.addCity(cityrequest);
+    }
+
+    @PostMapping("addcourse")
+    public Course addCourse(@RequestBody CourseRequest courseRequest) {
+        return cityService.addCourseWithContents(courseRequest);
     }
 }
