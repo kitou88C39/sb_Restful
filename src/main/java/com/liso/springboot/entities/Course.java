@@ -13,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "courses")
 public class Course {
@@ -26,6 +28,7 @@ public class Course {
 
     @ManyToMany(cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
     @JoinTable(name = "course_coursecontents_mapping", joinColumns = @JoninColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "content_id"))
+    @JsonIgnore
     private Set<CourseContents> coursecontents = new HashSet<>(null);
 
     public int getId() {
