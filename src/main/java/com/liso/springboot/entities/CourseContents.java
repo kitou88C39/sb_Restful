@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "coursecontents")
 public class CourseContents {
@@ -19,6 +21,7 @@ public class CourseContents {
     private String content;
 
     @ManyToMany(mappedBy = "coursecontents")
+    @JsonIgnore
     private Set<Course> courses = new HashSet<>();
 
     public int getId() {
