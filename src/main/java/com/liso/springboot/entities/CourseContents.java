@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "courses")
+@Table(name = "coursecontents")
 public class CourseContents {
 
     @Id
@@ -18,7 +18,7 @@ public class CourseContents {
 
     private String content;
 
-    @ManyToMany(mappdBy = "coursecontents")
+    @ManyToMany(mappedBy = "coursecontents")
     private Set<Course> courses = new HashSet<>();
 
     public int getId() {
@@ -43,6 +43,10 @@ public class CourseContents {
 
     public void setCourses(Set<Course> courses) {
         this.courses = courses;
+    }
+
+    public void addCourse(Course course) {
+        this.courses.add(course);
     }
 
 }
