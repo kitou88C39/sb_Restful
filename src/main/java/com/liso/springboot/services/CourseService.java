@@ -26,15 +26,16 @@ public class CourseService {
         course.setId(courseRequest.id);
         course.setCoursename(courseRequest.coursename);
         course.setCoursecontents(courseRequest.coursecontents
-        .stream()
-        .map(coursecontent -> {
-            CourseContents contents = coursecontent;
-            if(contents.getId() > 0){
-               contents = coursecontentRepo.findById(contents.getId());
-            }
-            contents.getCourses().add(course)
-        }))
-
+                .stream()
+                .map(coursecontent -> {
+                    CourseContents contents = coursecontent;
+                    if (contents.getId() > 0) {
+                        contents = coursecontentRepo.findById(contents.getId());
+                    }
+                    contents.add(course);
+                    return contents;
+                }))
+                .collect(collecotors.toSet());
         return courseRepository.save(course);
     }
 }
