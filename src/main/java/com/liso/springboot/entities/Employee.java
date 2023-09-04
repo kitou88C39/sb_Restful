@@ -24,5 +24,6 @@ public class Employee {
     private boolean leftjob;
 
     public Employee() {
+
     }
 }

@@ -45,4 +45,9 @@ public class EmployeeController {
     public Employee getEmployeeById(@RequestParam int id) {
         return employeeService.findAllEmployees(id);
     }
+
+    @GetMapping("employeebyids")
+    public List<Employee> getEmployeeByIds(@RequestBody List<Integer> ids) {
+        return employeeService.findAllEmployeesByIds(ids);
+    }
 }
