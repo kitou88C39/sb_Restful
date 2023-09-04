@@ -54,4 +54,9 @@ public class EmployeeController {
     public List<Employee> getEmployeeByIds(@RequestBody List<Integer> ids) {
         return employeeService.findAllEmployeesByIds(ids);
     }
+
+    @GetMapping("empByDeptAndAge")
+    public List<Employee> getEmpByDeptAndAge(@RequestParam String department, @RequestParam int age) {
+        return employeeRepository.findByDepartmentAndAngeLessThan(department, age);
+    }
 }
