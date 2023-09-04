@@ -7,6 +7,7 @@ import com.liso.springboot.Pojos.CourseRequest;
 import com.liso.springboot.entities.City;
 import com.liso.springboot.entities.Course;
 import com.liso.springboot.entities.Employee;
+import com.liso.springboot.repositories.EmployeeRepository;
 import com.liso.springboot.services.CityService;
 import com.liso.springboot.services.CourseService;
 import com.liso.springboot.services.EmployeeService;
@@ -26,6 +27,9 @@ public class EmployeeController {
     @Autowired
     EmployeeService employeeService;
 
+    @Autowired
+    EmployeeRepository employeeRepository;
+
     @GetMapping("addemployees")
     public List<Employee> addAllEmployees(@RequestBody List<Employee> employees) {
         return employeeService.saveAllEmployees(employees);
@@ -43,7 +47,7 @@ public class EmployeeController {
 
     @GetMapping("employeebyid")
     public Employee getEmployeeById(@RequestParam int id) {
-        return employeeService.findAllEmployees(id);
+        return employeeService.findAllEmployeeById(id);
     }
 
     @GetMapping("employeebyids")
