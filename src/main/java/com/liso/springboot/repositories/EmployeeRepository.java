@@ -19,4 +19,9 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findByEmployeenameContaining(String employeename);
 
     List<Employee> findByEmployeenameEndingWith(String employeename);
+
+
+    List<Employee> findTop5ByAge(int age);
+    List<Employee> findByAgeBetween(int startage, int endage);
+    List<Employee> findByAgeIn(List<Integer> agegroup);
 }
