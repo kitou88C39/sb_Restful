@@ -10,11 +10,10 @@ import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
 @Entity
 @Table(name = "cities")
 public class City {
-    
+
     @Id
     @Column(name = "city_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,51 +36,51 @@ public class City {
     @JoinColumn(name = "country_id", insertable = false, updatable = false)
     private Country country;
 
-    public Long getId(){
+    public Long getId() {
         return id;
     }
 
-    public void setId(Long id){
+    public void setId(Long id) {
         this.id = id;
     }
-    
-    public String getCityname(){
+
+    public String getCityname() {
         return cityname;
     }
 
-    public void setCityname(String cityname){
+    public void setCityname(String cityname) {
         this.cityname = cityname;
     }
 
-    public String getCitycode(){
+    public String getCitycode() {
         return citycode;
     }
 
-    public void setCitycode(String citycode){
+    public void setCitycode(String citycode) {
         this.citycode = citycode;
     }
 
-    public String getBeanid(){
+    public String getBeanid() {
         return beanid;
     }
 
-    public void setBeanid(String beanid){
+    public void setBeanid(String beanid) {
         this.beanid = beanid;
     }
 
-    public Country getCountry(){
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(Country country){
+    public void setCountry(Country country) {
         this.country = country;
     }
 
-    public int getCountryid(){
+    public int getCountryid() {
         return countryid;
     }
 
-    public void setCountryid(int countryid){
+    public void setCountryid(int countryid) {
         this.countryid = countryid;
     }
 
