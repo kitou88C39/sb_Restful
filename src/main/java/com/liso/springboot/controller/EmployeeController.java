@@ -55,8 +55,13 @@ public class EmployeeController {
         return employeeService.findAllEmployeesByIds(ids);
     }
 
-    @GetMapping("empByDeptAndAge")
+    @GetMapping("empbydeptandage")
     public List<Employee> getEmpByDeptAndAge(@RequestParam String department, @RequestParam int age) {
         return employeeRepository.findByDepartmentAndAgeGreaterThanEqual(department, age);
+    }
+
+    @GetMapping("employeesbyname")
+    public List<Employee> getEmployeesByName(@RequestParam String employeename) {
+        return employeeRepository.findByEmployeenameStartigWith(employeename);
     }
 }
