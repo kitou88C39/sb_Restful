@@ -29,5 +29,11 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findByJoiningdateBefore(Date date);
     List<Employee> findByJoiningdateBetween(Date startdate, Date enddate);
     List<Employee> findByJoiningdateBetweenAndDepartment(Date startdate, Date enddate, String department);
-    
+
+    List<Employee> findByLeftonIsNull();
+
+    List<Employee> findByEmployeenameEquals(String employeename);
+    List<Employee> findByEmployeenameIsNot(String employeename);
+    List<Employee> findByEmployeenameIsNull();
+    List<Employee> findByEmployeenameIsNotNull();
 }
