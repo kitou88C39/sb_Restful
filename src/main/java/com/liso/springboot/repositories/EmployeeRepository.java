@@ -24,4 +24,10 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findTop5ByAge(int age);
     List<Employee> findByAgeBetween(int startage, int endage);
     List<Employee> findByAgeIn(List<Integer> agegroup);
+
+    List<Employee> findByJoiningdateAfter(Date date);
+    List<Employee> findByJoiningdateBefore(Date date);
+    List<Employee> findByJoiningdateBetween(Date startdate, Date enddate);
+    List<Employee> findByJoiningdateBetweenAndDepartment(Date startdate, Date enddate, String department);
+    
 }
