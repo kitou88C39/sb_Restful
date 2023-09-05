@@ -62,6 +62,6 @@ public class EmployeeController {
 
     @GetMapping("employeesbyname")
     public List<Employee> getEmployeesByName(@RequestParam String employeename) {
-        return employeeRepository.findByEmployeenameContaining(employeename);
+        return employeeRepository.findByEmployeenameEndingWith(employeename);
     }
 }
