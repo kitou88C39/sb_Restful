@@ -57,6 +57,6 @@ public class EmployeeController {
 
     @GetMapping("empByDeptAndAge")
     public List<Employee> getEmpByDeptAndAge(@RequestParam String department, @RequestParam int age) {
-        return employeeRepository.findByDepartmentAndAngeLessThan(department, age);
+        return employeeRepository.findByDepartmentAndAgeGreaterThanEqual(department, age);
     }
 }

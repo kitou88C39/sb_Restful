@@ -12,6 +12,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     Employee findById(int id);
     List<Employee> findByEmployeename(String employeename);
 
-    List<Employee> findByDepartmentAndAngeLessThan(String department, int age);
+    List<Employee> findByDepartmentAndAngeLessThanEqual(String department, int age);
 
 }
