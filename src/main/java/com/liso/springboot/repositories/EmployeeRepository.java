@@ -14,4 +14,5 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     List<Employee> findByDepartmentAndAngeGreaterThanEqual(String department, int age);
 
+     List<Employee> findByEmployeenameStartigWith(String employeename);
 }
