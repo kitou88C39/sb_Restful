@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     Employee findById(int id);
+
     List<Employee> findByEmployeename(String employeename);
 
     List<Employee> findByDepartmentAndAngeGreaterThanEqual(String department, int age);
@@ -20,20 +21,30 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     List<Employee> findByEmployeenameEndingWith(String employeename);
 
-
     List<Employee> findTop5ByAge(int age);
+
     List<Employee> findByAgeBetween(int startage, int endage);
+
     List<Employee> findByAgeIn(List<Integer> agegroup);
 
     List<Employee> findByJoiningdateAfter(Date date);
+
     List<Employee> findByJoiningdateBefore(Date date);
+
     List<Employee> findByJoiningdateBetween(Date startdate, Date enddate);
+
     List<Employee> findByJoiningdateBetweenAndDepartment(Date startdate, Date enddate, String department);
 
     List<Employee> findByLeftonIsNull();
 
     List<Employee> findByEmployeenameEquals(String employeename);
+
     List<Employee> findByEmployeenameIsNot(String employeename);
+
     List<Employee> findByEmployeenameIsNull();
+
     List<Employee> findByEmployeenameIsNotNull();
+
+    List<Employee> findByEmployeenameOrderByJoiningdateAsc(String employeename);
+    List<Employee> findByEmployeenameOrderByJoiningdateDesc(String employeename);
 }
