@@ -42,12 +42,12 @@ public class EmployeeController {
 
     @GetMapping("employeeswithname")
     public List<Employee> addAllEmployeesWithname(@RequestParam String employeename) {
-        return employeeService.findAllEmployeesByName(employeename);
+        return employeeService.findEmployeesByName(employeename);
     }
 
     @GetMapping("employeebyid")
     public Employee getEmployeeById(@RequestParam int id) {
-        return employeeService.findAllEmployeeById(id);
+        return employeeService.findEmployeeById(id);
     }
 
     @GetMapping("employeebyids")
