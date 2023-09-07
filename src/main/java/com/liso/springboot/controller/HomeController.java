@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.liso.springboot.Pojos.CityRequest;
 import com.liso.springboot.entities.City;
+import com.liso.springboot.entities.Country;
 import com.liso.springboot.services.CityService;
 import com.liso.springboot.services.CourseService;
 
@@ -48,6 +49,26 @@ public class HomeController {
 
     @PostMapping("addcourse")
     public Course addCourse(@RequestBody CourseRequest courseRequest) {
-        return cityService.addCourseWithContents(courseRequest);
+        return courseService.addCourseWithContents(courseRequest);
+    }
+
+    @GetMapping("countrystartswith")
+    public List<Country> countryStartWith(@RequestBody String countryname) {
+        return cityService.findByCountrynameStartsWithOrderByPopulation(countryname);
+    }
+
+    @GetMapping("getcountries")
+    public List<Country> getAllcountries() {
+        return cityService.getAllcountries();
+    }
+
+    @GetMapping("getcountrycontating")
+    public List<Country> getCountryContaining(@RequestBody String substring) {
+        return cityService.getCountryContaining(substring);
+    }
+
+    @GetMapping("getcountry")
+    public List<Country> getCountry(@RequestBody int id) {
+        return cityService.getCountry(id);
     }
 }
