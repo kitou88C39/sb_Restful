@@ -68,7 +68,7 @@ public class HomeController {
     }
 
     @GetMapping("getcountry")
-    public List<Country> getCountry(@RequestBody int id) {
+    public Country getCountry(@RequestBody int id) {
         return cityService.getCountry(id);
     }
 }
