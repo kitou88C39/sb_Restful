@@ -54,7 +54,7 @@ public class HomeController {
 
     @GetMapping("countrystartswith")
     public List<Country> countryStartWith(@RequestBody String countryname) {
-        return cityService.findByCountrynameStartsWithOrderByPopulation(countryname);
+        return cityService.findByCountryNameStartsWithOrderByPopulation(countryname);
     }
 
     @GetMapping("getcountries")
@@ -73,7 +73,7 @@ public class HomeController {
     }
 
     @GetMapping("getcountrybyname")
-    public Country getCountryByName(@RequestBody String prefix) {
+    public List<Country> getCountryByName(@RequestBody String prefix) {
         return cityService.getCountryByName(prefix);
     }
 }
