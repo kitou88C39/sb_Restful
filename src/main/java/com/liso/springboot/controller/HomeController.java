@@ -71,4 +71,9 @@ public class HomeController {
     public Country getCountry(@RequestBody int id) {
         return cityService.getCountry(id);
     }
+
+    @GetMapping("getcountrybyname")
+    public Country getCountryByName(@RequestBody String prefix) {
+        return cityService.getCountryByName(prefix);
+    }
 }
