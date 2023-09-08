@@ -61,4 +61,7 @@ public class CityService {
         return countryRepository.getById(id);
     }
 
+    public List<Country> getCountryByName(String prefix) {
+        return countryRepository.getByCountryname(prefix);
+    }
 }
