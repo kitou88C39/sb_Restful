@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.liso.springboot.Pojos.CityRequest;
 import com.liso.springboot.entities.City;
+import com.liso.springboot.entities.Country;
 import com.liso.springboot.repositories.CityRepository;
 import com.liso.springboot.repositories.CountryRepository;
 
@@ -42,6 +43,22 @@ public class CityService {
         city.setCountry(country);
 
         return cityresRepository.save(city);
+    }
+
+    public List<City> findByCountryNameStartsWithOrderByPopulation(String countryname) {
+        return cityresRepository.findByCountryNameStartsWithOrderByPopulation(countryname);
+    }
+
+    public List<Country> getAllCountries() {
+        return countryRepository.findAll(Sort.by(Direction.ASC, "population"));
+    }
+
+    public List<City> getCountryContaining(String substring) {
+        return cityresRepository.findByCountrynameContaining(substring);
+    }
+
+    public Country getCountry(int id) {
+        return countryRepository.getById(id);
     }
 
 }
