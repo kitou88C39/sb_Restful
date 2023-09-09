@@ -26,7 +26,7 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
     List<Country> getByCountryname(String prefix);
 
     @Query("select c.countryname,c.population from Country c where c.countryname like :countryname% and c.population >= :population")
-    List<Country> findByCountrynameAndPopulation(@Param("countryname") String countryname,
+    List<Object[]> findByCountrynameAndPopulation(@Param("countryname") String countryname,
             @Param("poplatuin") long population);
 
     List<Country> findByCountrynameStartsWithOrderByPopulationDesc(String suffix);
