@@ -45,16 +45,16 @@ public class CityService {
         return cityresRepository.save(city);
     }
 
-    public List<City> findByCountryNameStartsWithOrderByPopulation(String countryname) {
-        return cityresRepository.findByCountryNameStartsWithOrderByPopulation(countryname);
+    public List<Country> findByCountryNameStartsWithOrderByPopulation(String countryname) {
+        return countryRepository.findByCountryNameStartsWithOrderByPopulation(countryname);
     }
 
     public List<Country> getAllCountries() {
         return countryRepository.findAll(Sort.by(Direction.ASC, "population"));
     }
 
-    public List<City> getCountryContaining(String substring) {
-        return cityresRepository.findByCountrynameContaining(substring);
+    public List<Country> getCountryContaining(String substring) {
+        return countryRepository.findByCountrynameContaining(substring);
     }
 
     public Country getCountry(int id) {
@@ -63,5 +63,9 @@ public class CityService {
 
     public List<Country> getCountryByName(String prefix) {
         return countryRepository.getByCountryname(prefix);
+    }
+
+    public List<Country> getCountryByNameandPop(String prefix, long population) {
+        return countryRepository.getByCountrynamePopulation(prefix, population);
     }
 }
