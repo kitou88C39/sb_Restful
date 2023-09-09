@@ -17,15 +17,18 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
 
     List<Country> findByCountrynameStartsWithOrderByPopulationAsc(String prefix);
 
-    ＠Query("select c from Country c where c.countryname like ?1% ORDER BY c.population ASC")
-
+    @Query("select c from Country c where c.countryname like ?1% ORDER BY c.population ASC")
     List<Country> getByCountryname(String prefix);
 
-    List<Country> findByCountrynameStartsWithOrderByPopulationDesc(String sufix);
+    @Query("select c from Country c where c.countryname like :countryname% and c.population >= :population")
+    List<Country> findByCountrynameAndPopulation(@Param("countryname") String countryname,
+            @Param("poplatuin") long population);
+
+    List<Country> findByCountrynameStartsWithOrderByPopulationDesc(String suffix);
 
     List<Country> findByCountrynameStartsWith(String prefix);
 
-    List<Country> findByCountrynameEndsWith(String sufix);
+    List<Country> findByCountrynameEndsWith(String suffix);
 
     List<Country> findByCountrynameContaining(String subString);
 }
