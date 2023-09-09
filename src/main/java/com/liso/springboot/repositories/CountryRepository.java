@@ -29,7 +29,7 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
     List<Object[]> findByCountrynameAndPopulation(@Param("countryname") String countryname,
             @Param("poplatuin") long population);
 
-    @Query("select c.countryname,c.population from Country c where c.countryname like :countryname% and c.population >= :population, nativeQuery=true")
+    @Query("select c.country_name,c.population from countries c where c.country_name like :countryname% and c.population >= :population, nativeQuery=true")
     List<Object[]> findByCountrynameAndPopulationNative(@Param("countryname") String countryname,
             @Param("poplatuin") long population);
 
