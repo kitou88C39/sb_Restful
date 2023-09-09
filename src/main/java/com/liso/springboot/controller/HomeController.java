@@ -74,7 +74,18 @@ public class HomeController {
     }
 
     @GetMapping("getcountrybyname")
+    public List<Country> getCountryByName(@RequestParam String prefix) {
+        return cityService.getCountryByName(prefix);
+    }
+
+    @GetMapping("getcountrybynameandpop")
     public List<Object[]> getCountryByNameandPop(@RequestParam String prefix, @RequestParam long population) {
         return cityService.getCountryByNameandPop(prefix, population);
     }
+
+    @GetMapping("getcountrybyids")
+    public List<Country> getCountryByIds(@RequestBody Set<Integer> ids) {
+        return cityService.getCountryByIds(ids);
+    }
+
 }
