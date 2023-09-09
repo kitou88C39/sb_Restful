@@ -12,6 +12,9 @@ public interface CountryRepository extends JpaRepository<Country, Integer> {
     @Query("from Country where id = ?1")
     Country getById(int id);
 
+    @Query("from Country where id (?1)")
+    List<Country> getByIds(Set<Integer> ids);
+
     List<Country> findByCountrynameAndPopulationGreaterThanEqual(String countryname, long population);
 
     List<Country> findByCountrynameAndPopulationLessThanEqual(String countryname, long population);
