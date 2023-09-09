@@ -68,4 +68,8 @@ public class CityService {
     public List<Object[]> getCountryByNameandPop(String prefix, long population) {
         return countryRepository.getByCountrynamePopulationNative(prefix, population);
     }
+
+    public List<Country> getCountryByIds(Set<Integer> ids) {
+        return countryRepository.getByIds(ids);
+    }
 }
