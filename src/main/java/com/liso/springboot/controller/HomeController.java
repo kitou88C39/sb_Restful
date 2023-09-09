@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -73,7 +74,7 @@ public class HomeController {
     }
 
     @GetMapping("getcountrybyname")
-    public List<Country> getCountryByName(@RequestBody String prefix) {
-        return cityService.getCountryByName(prefix);
+    public List<Country> getCountryByNameandPop(@RequestParam String prefix, @RequestParam long population) {
+        return cityService.getCountryByNameandPop(prefix, population);
     }
 }
