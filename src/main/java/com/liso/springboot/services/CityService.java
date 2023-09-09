@@ -65,7 +65,7 @@ public class CityService {
         return countryRepository.getByCountryname(prefix);
     }
 
-    public List<Country> getCountryByNameandPop(String prefix, long population) {
+    public List<Object[]> getCountryByNameandPop(String prefix, long population) {
         return countryRepository.getByCountrynamePopulation(prefix, population);
     }
 }
