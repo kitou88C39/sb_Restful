@@ -15,13 +15,20 @@ public class Employee {
     @column(name = "employee_id")
 
     private int id;
+    @Notnull
     private String employeename;
+    @Notnull
     private String department;
+    @Notnull
     private Date joiningdate;
+    @Notnull
     private int age;
+    @Notnull
     private String address;
+    @Notnull
     private float salary;
     private ZonedDateTime lefton;
+    @Notnull
     private boolean leftjob;
 
     public Employee() {
