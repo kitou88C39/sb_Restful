@@ -13,6 +13,7 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @column(name = "employee_id")
+
     private int id;
     private String employeename;
     private String department;
@@ -30,6 +31,11 @@ public class Employee {
     }
 
     public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmplpyeename(){
+        return employeename;
     }
 
 }
