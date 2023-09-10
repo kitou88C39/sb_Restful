@@ -12,6 +12,8 @@ import com.liso.springboot.services.CityService;
 import com.liso.springboot.services.CourseService;
 import com.liso.springboot.services.EmployeeService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -36,8 +38,7 @@ public class EmployeeController {
     }
 
     @PostMapping("addemployee")
-    public Employee addAllEmployees(@RequestBody Employee employee) {
-        System.out.println("Inside endpoint");
+    public Employee addAllEmployees(@Valid @RequestBody Employee employee) {
         return employeeService.saveEmployees(employee);
     }
 
