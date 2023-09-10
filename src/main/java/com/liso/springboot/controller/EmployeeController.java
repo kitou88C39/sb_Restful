@@ -35,6 +35,12 @@ public class EmployeeController {
         return employeeService.saveAllEmployees(employees);
     }
 
+    @PostMapping("addemployee")
+    public Employee addAllEmployees(@RequestBody Employee employee) {
+        System.out.println("Inside endpoint");
+        return employeeService.saveEmployees(employee);
+    }
+
     @GetMapping("allemployees")
     public List<Employee> getAllEmployees() {
         return employeeService.findAllEmployees();

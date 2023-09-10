@@ -19,8 +19,8 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @column(name = "employee_id")
-
     private int id;
+
     @Notnull
     private String employeename;
     @Notnull
