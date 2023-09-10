@@ -23,7 +23,7 @@ public class Employee {
 
     @Notnull
     private String employeename;
-    @Notnull
+    @Notnull(message = "Department is required")
     private String department;
     @Notnull
     private Date joiningdate;
@@ -38,6 +38,7 @@ public class Employee {
     private boolean leftjob;
 
     public Employee() {
+    }
 
     public int getId() {
         return id;
@@ -47,9 +48,8 @@ public class Employee {
         this.id = id;
     }
 
-    public String getEmplpyeename(){
+    public String getEmplpyeename() {
         return employeename;
     }
 
-}
 }
