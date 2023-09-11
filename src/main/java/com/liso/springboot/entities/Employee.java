@@ -24,6 +24,7 @@ public class Employee {
     @Notnull
     private String employeename;
     @Notnull(message = "Department is required")
+    @Pattern(regexp = "^[0-9A-Z]*$", message = "Department accepts only Alphanumeric value ")
     private String department;
     @Notnull
     private Date joiningdate;
