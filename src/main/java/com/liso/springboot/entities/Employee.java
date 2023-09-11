@@ -31,6 +31,7 @@ public class Employee {
 
     @Notnull(message = "Age is required")
     @Min(value = 18, message = "The minimum age requirement is 18")
+    @Size(min = 10, max = 50, message = "Department accepts only upto 50 character and minimum 10 characters")
     private int age;
     @Notnull
     private String address;
