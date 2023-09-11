@@ -53,7 +53,8 @@ public class EmployeeController {
     }
 
     @GetMapping("employeebyid")
-    public Employee getEmployeeById(@RequestParam int id) {
+    public Employee getEmployeeById(
+            @RequestParam @Min(value = 1, message = "Employee ID should be greater than 0") int id) {
         return employeeService.findEmployeeById(id);
     }
 
@@ -68,7 +69,7 @@ public class EmployeeController {
     }
 
     @GetMapping("employeesbyname")
-    public List<Employee> getEmployeesByName(@RequestParam String employeename) {
-        return employeeRepository.findByEmployeenameEndingWith(employeename);
+    public List<Employee> getEmployeesByName(@RequestParam int age) {
+        return employeeRepository.findByTop5ByAge(age);
     }
 }
