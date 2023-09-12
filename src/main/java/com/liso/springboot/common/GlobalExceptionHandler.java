@@ -29,4 +29,12 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
         return new ResponseEntity<>(body, headers, status);
     }
+
+    @Override
+    protected ResponseEntity<Object> handleMethodArgumentNotReadable(MethodArgumentNotValidException ex,
+            HttpHeaders headers, HttpStatus status, WebRequest request) {
+                Map<String, Object> body = new HashMap<>();
+                body.put("erros", ex.getMessage());
+
+        return new ResponseEntity<>(body, headers, status);
 }
