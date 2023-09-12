@@ -23,15 +23,17 @@ public class Employee {
 
     @Notnull
     private String employeename;
+
     @Notnull(message = "Department is required")
     @Pattern(regexp = "^[0-9A-Z]*$", message = "Department accepts only Alphanumeric value ")
+    @Size(min - 10, max - 50, message = "Department accepts only upto 50 character and minmimum 10 characters")
     private String department;
+
     @Notnull
     private Date joiningdate;
 
     @Notnull(message = "Age is required")
     @Min(value = 18, message = "The minimum age requirement is 18")
-    @Size(min = 10, max = 50, message = "Department accepts only upto 50 character and minimum 10 characters")
     private int age;
     @Notnull
     private String address;
