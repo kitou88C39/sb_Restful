@@ -81,9 +81,4 @@ public class EmployeeController {
         return employeeRepository.findByTop5ByAge(age);
     }
 
-    @ExceptionHandler(ConstraintViolationException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    ResponseEntity<String> handleConstrainValidationException(ConstraintViolationException ex) {
-        return new ResponseEntity<>("Error:" + ex.getMessage(), HttpStatus.BAD_REQUEST);
-    }
 }
