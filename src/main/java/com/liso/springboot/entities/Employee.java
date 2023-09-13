@@ -31,7 +31,6 @@ public class Employee {
 
     @Notnull
     @Temporal(TemporalType.Date)
-    @JsonFormat(pattern = "yyy-mm-dd HH:mm:ss")
     private Date joiningdate;
 
     @Notnull(message = "Age is required")
@@ -54,15 +53,10 @@ public class Employee {
     }
 
     public void setId(int id) {
-
-    }
-
-    public void setId(int id) {
         this.id = id;
     }
 
     public String getEmplpyeename() {
         return employeename;
     }
-
 }
