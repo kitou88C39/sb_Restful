@@ -10,13 +10,13 @@ import org.springframework.context.annotation.Bean;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 @SpringBootApplication
-public class SpringbootRestfulApplication {
+public class SpringbootApplication {
 
 	private static final String dateFormat = "yyyy-MM-dd";
 	private static final String dateTimeFormat = "yyyy-MM-dd HH:mm:ss";
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootRestfulApplication.class, args);
+		SpringApplication.run(SpringbootApplication.class, args);
 	}
 
 	@Bean

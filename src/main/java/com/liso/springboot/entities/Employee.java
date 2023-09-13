@@ -31,7 +31,6 @@ public class Employee {
 
     @Notnull
     @Temporal(TemporalType.Date)
-    @JsonFormat(pattern = "yyy-mm-dd HH:mm:ss")
     private Date joiningdate;
 
     @Notnull(message = "Age is required")
