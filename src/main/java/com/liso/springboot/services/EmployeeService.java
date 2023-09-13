@@ -42,4 +42,7 @@ public class EmployeeService {
         return employeeRepository.findByEmployeename(employeename);
     }
 
+    public int Gettotalemployees() {
+        return employeeRepository.NggetTotalEmployees();
+    }
 }
