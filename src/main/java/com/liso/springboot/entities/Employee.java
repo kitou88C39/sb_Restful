@@ -53,15 +53,10 @@ public class Employee {
     }
 
     public void setId(int id) {
-
-    }
-
-    public void setId(int id) {
         this.id = id;
     }
 
     public String getEmplpyeename() {
         return employeename;
     }
-
 }
