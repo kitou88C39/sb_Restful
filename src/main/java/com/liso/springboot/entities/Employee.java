@@ -30,11 +30,14 @@ public class Employee {
     private String department;
 
     @Notnull
+    @Temporal(TemporalType.Date)
+    @JsonFormat(pattern = "yyy-mm-dd HH:mm:ss")
     private Date joiningdate;
 
     @Notnull(message = "Age is required")
     @Min(value = 18, message = "The minimum age requirement is 18")
     private int age;
+
     @Notnull
     private String address;
     @Notnull
@@ -48,6 +51,10 @@ public class Employee {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+
     }
 
     public void setId(int id) {
