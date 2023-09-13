@@ -24,7 +24,8 @@ public class SpringbootApplication {
 		return builder -> {
 			builder.simpleDateFormat(dateFormat);
 			builder.serializers(new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(dateFormat)));
-			builder.serializers(new LocalDateSerializer(DateTimeFormatter.ofPattern(dateFormat)));
+			builder.serializers(new LocalDateSerializer(DateTimeFormatter.ofPattern(dateTimeFormat)));
+			builder.serializers(new ZoneDateSerializer(DateTimeFormatter.ofPattern(dateTimeFormat)));
 		};
 	}
 }
