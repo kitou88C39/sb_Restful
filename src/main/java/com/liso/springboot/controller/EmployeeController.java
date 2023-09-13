@@ -78,7 +78,11 @@ public class EmployeeController {
 
     @GetMapping("employeesbyname")
     public List<Employee> getEmployeesByName(@RequestParam int age) {
-        return employeeRepository.findByTop5ByAge(age);
+        return employeeRepository.findTop5ByAge(age);
     }
 
+    @GetMapping("totalemployees")
+    public int Gettotalemployees() {
+        return employeeService.Gettotalemployees();
+    }
 }
