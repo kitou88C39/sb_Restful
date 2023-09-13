@@ -42,7 +42,10 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findByLeftjob(boolean leftjob);
 
     @Query(value ="select Gettotalemployees()",nativeQuery = true)
-    int NggetTotalEmployees();
+    int NqgetTotalEmployees();
+
+    @Query(value ="select procsingleoutput(?1)",nativeQuery = true)
+    int NqGetEmployees(int employeeid);
 
     @Procedure(procedureName = "Gettotalemployees")
     int ProcgetTotalEmployees();
