@@ -43,6 +43,6 @@ public class EmployeeService {
     }
 
     public int Gettotalemployees() {
-        return employeeRepository.NggetTotalEmployees();
+        return employeeRepository.ProcgetTotalEmployees();
     }
 }
