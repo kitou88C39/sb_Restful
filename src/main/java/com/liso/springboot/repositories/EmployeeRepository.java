@@ -40,4 +40,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     List<Employee> findByLeftjobTrue();
     List<Employee> findByLeftjobFalse();
     List<Employee> findByLeftjob(boolean leftjob);
+
+    @Query(value ="select Gettotalemployees()",nativeQuery = true)
+    int NggetTotalEmployees();
 }
