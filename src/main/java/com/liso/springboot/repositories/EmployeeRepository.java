@@ -43,4 +43,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 
     @Query(value ="select Gettotalemployees()",nativeQuery = true)
     int NggetTotalEmployees();
+
+    @Procedure(procedureName = "Gettotalemployees")
+    int ProcgetTotalEmployees();
 }
